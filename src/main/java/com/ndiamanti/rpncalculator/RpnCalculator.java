@@ -30,6 +30,10 @@ public class RpnCalculator {
             Integer secondOperand = values.pop();
             Integer firstOperand = values.pop();
             return firstOperand - secondOperand;
+        } else if (operation.equals("*")) {
+            Integer secondOperand = values.pop();
+            Integer firstOperand = values.pop();
+            return firstOperand * secondOperand;
         } else return 0;
     }
 }
