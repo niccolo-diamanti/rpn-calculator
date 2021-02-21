@@ -40,4 +40,10 @@ class RpnCalculatorTest {
         assertEquals(5, rpnCalculator.calculateExpression("6 2 / 2 +"));
         assertEquals(11, rpnCalculator.calculateExpression("3 4 x 1 -"));
     }
+
+    @Test
+    void calculateExpression_shouldHandleVariables() {
+        assertEquals(5, rpnCalculator.calculateExpression("var1 var2 + | var1 3 var2 2"));
+        assertEquals(40, rpnCalculator.calculateExpression("3 var + var x | var 5"));
+    }
 }
