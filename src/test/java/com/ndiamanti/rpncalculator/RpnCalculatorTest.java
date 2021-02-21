@@ -23,4 +23,11 @@ class RpnCalculatorTest {
         RpnCalculator rpnCalculator = new RpnCalculator();
         assertEquals(0, rpnCalculator.calculateExpression("3 5 - 2 +"));
     }
+
+    @Test
+    void calculateExpression_shouldMultiplyNumbers() {
+        RpnCalculator rpnCalculator = new RpnCalculator();
+        assertEquals(0, rpnCalculator.calculateExpression("3 5 - 2 + 5 *"));
+        assertEquals(15, rpnCalculator.calculateExpression("3 5 *"));
+    }
 }
