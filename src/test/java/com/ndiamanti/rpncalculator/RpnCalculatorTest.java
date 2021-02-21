@@ -27,7 +27,14 @@ class RpnCalculatorTest {
     @Test
     void calculateExpression_shouldMultiplyNumbers() {
         RpnCalculator rpnCalculator = new RpnCalculator();
-        assertEquals(0, rpnCalculator.calculateExpression("3 5 - 2 + 5 *"));
-        assertEquals(15, rpnCalculator.calculateExpression("3 5 *"));
+        assertEquals(12, rpnCalculator.calculateExpression("3 4 *"));
+        assertEquals(2, rpnCalculator.calculateExpression("2 1 *"));
+    }
+
+    @Test
+    void calculateExpression_shouldDivideNumbers() {
+        RpnCalculator rpnCalculator = new RpnCalculator();
+        assertEquals(3, rpnCalculator.calculateExpression("6 2 /"));
+        assertEquals(2, rpnCalculator.calculateExpression("2 1 /"));
     }
 }
