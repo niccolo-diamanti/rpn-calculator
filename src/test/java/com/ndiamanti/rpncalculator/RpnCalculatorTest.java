@@ -1,12 +1,13 @@
 package com.ndiamanti.rpncalculator;
 
+import com.ndiamanti.rpncalculator.operation.integer.RpnCalculatorInteger;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RpnCalculatorTest {
 
-    RpnCalculator rpnCalculator = new RpnCalculator();
+    RpnCalculator<Integer> rpnCalculator = new RpnCalculatorInteger();
 
     @Test
     void calculateExpression_shouldAddNumbers() {
