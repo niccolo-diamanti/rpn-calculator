@@ -8,4 +8,5 @@ public class SubtractInteger extends BinaryOperator<Integer> {
     protected Integer evaluate(Integer firstOperand, Integer secondOperand) {
         return firstOperand - secondOperand;
     }
+
 }

@@ -3,6 +3,7 @@ package com.ndiamanti.rpncalculator.operation.integer;
 import com.ndiamanti.rpncalculator.Element;
 import com.ndiamanti.rpncalculator.Operand;
 import com.ndiamanti.rpncalculator.RpnCalculator;
+import com.ndiamanti.rpncalculator.Visitor;
 
 public class RpnCalculatorInteger extends RpnCalculator<Integer> {
 
@@ -20,5 +21,10 @@ public class RpnCalculatorInteger extends RpnCalculator<Integer> {
             default:
                 return new Operand<>(Integer.decode(operator));
         }
+    }
+
+    @Override
+    protected void accept(Visitor<Integer> visitor) {
+        visitor.visit(this);
     }
 }

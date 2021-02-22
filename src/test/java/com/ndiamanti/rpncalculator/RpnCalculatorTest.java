@@ -47,4 +47,11 @@ class RpnCalculatorTest {
         assertEquals(5, rpnCalculator.calculateExpression("var1 var2 + | var1 3 var2 2"));
         assertEquals(40, rpnCalculator.calculateExpression("3 var + var x | var 5"));
     }
+
+    @Test
+    void a() {
+        RpnVisitorInteger rpnVisitorInteger = new RpnVisitorInteger();
+        rpnCalculator.calculateExpression("6 2 / 2 +");
+        rpnCalculator.accept(rpnVisitorInteger);
+    }
 }

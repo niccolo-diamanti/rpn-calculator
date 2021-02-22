@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public abstract class RpnCalculator<T> {
 
+
     public T calculateExpression(String expression) {
         if (expression.contains("|")) {
             expression = substituteVariables(expression);
@@ -20,6 +21,8 @@ public abstract class RpnCalculator<T> {
     }
 
     protected abstract Element<T> parseElement(String element);
+
+    protected abstract void accept(Visitor<T> visitor);
 
     protected String substituteVariables(String expression) {
         String[] split = expression.split("\\|");
